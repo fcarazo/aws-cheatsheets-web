@@ -1,0 +1,40 @@
+```html
+<body>
+    <h1>Análisis de Datos de Medidores en AWS: Arquitectura de Referencia</h1>
+    
+    <h2>Introducción al Caso Práctico</h2>
+    <p>Los servicios de utilidades energéticas están adoptando arquitecturas modernas para aprovechar los datos de los medidores y mejorar la visibilidad operativa. Esta arquitectura de AWS para el análisis de datos de medidores permite a las empresas de energía construir soluciones que optimizan la disponibilidad de datos, detectan anomalías, previenen robos de energía y mejoran la participación del cliente a través de análisis proactivos. Para más información sobre AWS, visita <a href="https://awsdesdecero.com">awsdesdecero.com</a>.</p>
+
+    <h2>Servicios Clave de AWS Utilizados</h2>
+    <ul>
+        <li><strong>Amazon S3</strong>: Se utiliza como almacenamiento para datos estructurados y no estructurados.</li>
+        <li><strong>AWS Glue</strong>: Para la creación de catálogos de datos y la realización de ETL (Extracción, Transformación y Carga).</li>
+        <li><strong>Amazon Athena</strong>: Permite ejecutar consultas SQL sobre datos almacenados en S3 sin necesidad de mover los datos.</li>
+        <li><strong>Amazon EMR</strong>: Para el procesamiento de grandes volúmenes de datos y la ejecución de análisis complejos.</li>
+        <li><strong>Amazon Redshift</strong>: Usado para análisis de datos a gran escala y almacenamiento de datos.</li>
+        <li><strong>Amazon SageMaker</strong>: Proporciona herramientas para construir, entrenar y desplegar modelos de machine learning.</li>
+        <li><strong>Amazon QuickSight y Amazon Managed Grafana</strong>: Para la creación de dashboards interactivos y visualización de datos.</li>
+        <li><strong>Amazon Pinpoint</strong>: Para la comunicación proactiva con los clientes a través de diferentes canales.</li>
+    </ul>
+
+    <h2>Descripción de la Arquitectura Punto por Punto</h2>
+    <ol>
+        <li><strong>Ingesta de Datos</strong>: Los datos del medidor se ingieren a AWS a través de procesos tanto en lotes como en fluido, utilizando una variedad de fuentes como sistemas de gestión de datos de medidores (MDMS), sistemas de cabeza (HES) y sistemas de información de clientes (CIS).</li>
+        <li><strong>Catalogación de Datos</strong>: AWS Glue se utiliza para la catalogación de datos y hacer que los datos estén disponibles y sean consultables.</li>
+        <li><strong>Análisis de Datos</strong>: Con Amazon Redshift, se pueden realizar análisis complejos sobre grandes volúmenes de datos. Amazon EMR permite ejecutar análisis de gran escala.</li>
+        <li><strong>Machine Learning y Analítica Predictiva</strong>: Amazon SageMaker se utiliza para crear modelos que pueden detectar anomalías en la red y predecir el uso de energía y fallos en el equipo.</li>
+        <li><strong>Dashboards Interactivos</strong>: Las visualizaciones se crean en herramientas como Amazon QuickSight y Amazon Managed Grafana, facilitando a los usuarios finales acceder a las métricas y datos clave en tiempo real.</li>
+        <li><strong>Comunicación Proactiva</strong>: Amazon Pinpoint permite la interacción con los consumidores, enviando notificaciones y comunicaciones personalizadas basadas en análisis anticipados.</li>
+    </ol>
+
+    <h2>Conclusión con Puntos Clave</h2>
+    <p>La arquitectura de datos de medidores en AWS presenta un enfoque robusto para capitalizar la información de los medidores de energía. Los servicios descritos proporcionan soluciones efectivas para la detección de anomalías, la predicción de demanda y la participación del cliente, permitiendo a las empresas energéticas alcanzar insights críticos y mejorar sus operaciones. El uso de un flujo continuo de datos y la integración de análisis de AI/ML posiciona a estas empresas para ser más proactivas y responder rápidamente a las demandas del mercado.</p>
+
+    <p><strong>Enlace al Diagrama Original</strong>: <a href="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/meter-data-analytics-platform-ra.pdf">AWS Architecture Diagram</a></p>
+    
+    <h2>Diagrama de Arquitectura</h2>
+    <img src="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/meter-data-analytics-platform-ra.pdf" alt="Diagrama de Arquitectura de Análisis de Datos de Medidores" style="max-width:100%; height:auto;">
+    
+    <p>Para más información sobre AWS y sus arquitecturas, visita <a href="https://awsdesdecero.com">awsdesdecero.com</a>.</p>
+</body>
+```

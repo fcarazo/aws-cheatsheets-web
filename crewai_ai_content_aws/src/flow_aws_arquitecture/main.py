@@ -41,12 +41,33 @@ class AWSFlow(Flow[AWSState]):
     @start()
     def generate_urls(self):
 
-        urls = [
+        urls = archivos = [
             {
-                "file_name": "aws-07_AWS-Arquitecture-Identify-Product-Defects-Using-Industrial-Computer-Vision",
                 "url": "https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/identify-product-defects-using-industrial-computer-vision-ra.pdf",
+                "file_name": "aws-07_Arquitectura-Cloud-para-deteccion-de-defectos-en-productos-con-vision-computacional",
+            },
+            {
+                "url": "https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/meter-data-analytics-platform-ra.pdf",
+                "file_name": "aws-08_Plataforma-analitica-en-la-nube-para-datos-de-medidores-en-tiempo-real",
+            },
+            {
+                "url": "https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/highbyte-intelligence-hub-industrial-dataops-on-aws-ra.pdf?did=wp_card&trk=wp_card",
+                "file_name": "aws-09_Hub-de-inteligencia-industrial-en-AWS-para-optimizar-operaciones",
+            },
+            {
+                "url": "https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/siemens-industrial-edge-on-aws-ra.pdf",
+                "file_name": "aws-10_Edge-como-solucion-en-industria-4.0-con-Siemens-y-AWS",
+            },
+            {
+                "url": "https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/siemens-teamcenter-ra.pdf",
+                "file_name": "aws-11_Arquitectura-Cloud-para-gestionar-productos-con-Siemens-Teamcenter",
+            },
+            {
+                "url": "https://docs.aws.amazon.com/architecture-diagrams/latest/electric-vehicle-charging-station-management-software/electric-vehicle-charging-station-management-software.html",
+                "file_name": "aws-12_Gestion-de-estaciones-de-carga-para-vehiculos-electricos-en-AWS",
             },
         ]
+
         index_ = self.state.file_count - 1
         file_name = urls[index_]["file_name"] + ".html"
         print(file_name)
@@ -55,13 +76,22 @@ class AWSFlow(Flow[AWSState]):
     @listen(generate_urls)
     def generate_content(self, urls):
         print("Generating content")
-        # Download the PDF and convert it to PNG
-        index_ = self.state.file_count - 1
-        pdf_url = urls[index_]["url"]
-        img_file_name = urls[index_]["file_name"] + ".png"
-        img_file_name = os.path.join("../static/img/pubs/principal", img_file_name)
-        download_pdf_and_convert_to_png(pdf_url, img_file_name)
-        print(f"Image saved as {img_file_name}")
+
+        # Iterar sobre cada URL en el listado
+        for index_, url_data in enumerate(urls):
+            try:
+                pdf_url = url_data["url"]
+                img_file_name = url_data["file_name"] + ".png"
+                img_file_name = os.path.join(
+                    "../static/img/pubs/principal", img_file_name
+                )
+
+                # Descargar el PDF y convertirlo a PNG
+                download_pdf_and_convert_to_png(pdf_url, img_file_name)
+                print(f"Image saved as {img_file_name}")
+            except:
+                print(f"Image not processed: {img_file_name} ")
+        # Generar contenido con AWS Crew
         aws_content_crew = AWSCrew().crew()
         results = aws_content_crew.kickoff_for_each(urls)
         self.state.html = results

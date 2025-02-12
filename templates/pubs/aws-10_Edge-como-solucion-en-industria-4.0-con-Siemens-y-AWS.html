@@ -1,0 +1,45 @@
+```html
+<body>
+    <h1>Integración de Siemens Industrial Edge con AWS IoT Sitewise</h1>
+
+    <h2>Introducción al caso práctico</h2>
+    <p>
+        La arquitectura de referencia presentada ilustra cómo integrar AWS IoT SiteWise con Siemens Industrial Edge. Este enfoque permite a las organizaciones capturar y analizar datos industriales de manera eficiente, aprovechando el software de Siemens para la gestión local y en la nube. La solución proporciona capacidades avanzadas de análisis, visualización y aprendizaje automático, mejorando la toma de decisiones en el entorno industrial. Para más détails sobre AWS, visita <a href="https://awsdesdecero.com">awsdesdecero.com</a>.
+    </p>
+
+    <h2>Explicación de los servicios clave de AWS utilizados</h2>
+    <ul>
+        <li><strong>AWS IoT SiteWise</strong>: Servicio que facilita la captura y organización de datos de diferentes activos industriales, permitiendo crear modelos de datos y visualizar información útil.</li>
+        <li><strong>Amazon S3</strong>: Almacenamiento de objetos que permite la conservación de grandes volúmenes de datos.</li>
+        <li><strong>Amazon SageMaker</strong>: Servicio de aprendizaje automático que permite a los desarrolladores y científicos de datos construir, entrenar e implementar modelos de machine learning.</li>
+        <li><strong>Amazon QuickSight</strong>: Herramienta de análisis de datos y generación de informes que permite obtener insights a partir de los datos.</li>
+        <li><strong>Amazon Athena</strong>: Herramienta de consulta interactiva que utiliza SQL para analizar datos almacenados en Amazon S3.</li>
+        <li><strong>AWS IoT TwinMaker</strong>: Permite crear gemelos digitales para la visualización y análisis de activos industriales.</li>
+    </ul>
+
+    <h2>Descripción de la arquitectura punto por punto</h2>
+    <ol>
+        <li><strong>Dispositivos Edge de Siemens</strong>: Se implementan en el piso de la fábrica para la recopilación local de datos mediante solicitudes a máquinas y equipos operativos.</li>
+        <li><strong>Gestión de Edge</strong>: Utiliza el software de Siemens para administrar y monitorizar los dispositivos industriales desde una ubicación central.</li>
+        <li><strong>Conectores de datos</strong>: Utilizan protocolos como OPC-UA y Modbus para la recolección de datos desde diferentes tipos de maquinaria y dispositivos de campo.</li>
+        <li><strong>Envío de datos</strong>: Los dispositivos Edge envían los datos a AWS IoT SiteWise, donde se organizan y almacenan en Amazon S3.</li>
+        <li><strong>Análisis y visualización</strong>: Los datos son accesibles a través de Amazon QuickSight y Amazon Managed Grafana para generar visualizaciones interactivas.</li>
+        <li><strong>Machine Learning</strong>: Amazon SageMaker se utiliza para desarrollar modelos de aprendizaje automático, que luego pueden ser implementados en los dispositivos Edge.</li>
+        <li><strong>Monitoreo y gestión</strong>: Herramientas como AWS IoT TwinMaker ayudan en la gestión continua de los modelos de aprendizaje automático y en la mejora del rendimiento del sistema.</li>
+    </ol>
+
+    <h2>Conclusión con los puntos clave</h2>
+    <p>
+        La integración de Siemens Industrial Edge y AWS IoT SiteWise permite a las organizaciones aumentar su capacidad de recopilar y analizar datos industriales en tiempo real, facilitando la generación de insights para la toma de decisiones. Con el uso de servicios como Amazon SageMaker para aprendizaje automático, la solución se convierte en un potente aliado en la transformación digital de la industria. Para más información sobre AWS, visita <a href="https://awsdesdecero.com">awsdesdecero.com</a>.
+    </p>
+
+    <h2>Diagrama de arquitectura</h2>
+    <a href="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/siemens-industrial-edge-on-aws-ra.pdf">
+        <img src="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/siemens-industrial-edge-on-aws-ra.pdf" alt="Imagen del diagrama" width="600" height="400">
+    </a>
+    <p>
+        Puedes ver el diagrama de arquitectura original haciendo clic en el siguiente enlace: 
+        <a href="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/siemens-industrial-edge-on-aws-ra.pdf">Diagrama de arquitectura original</a>.
+    </p>
+</body>
+```

@@ -1,0 +1,31 @@
+```html
+<body>
+    <h1>Identificación de Defectos en Productos Usando Visión por Computadora en AWS</h1>
+    <p>En el mundo industrial actual, la capacidad de identificar defectos en productos es crucial para mantener la calidad y la eficiencia. En este artículo, discutiremos un caso práctico que muestra cómo se puede utilizar la arquitectura de AWS para resolver este desafío utilizando visión por computadora. Para más recursos sobre AWS, no dudes en visitar <a href="https://awsdesdecero.com">awsdesdecero.com</a>.</p>
+
+    <h2>Servicios Clave de AWS Utilizados</h2>
+    <ul>
+        <li><strong>Amazon S3:</strong> Almacenamiento de imágenes de productos para su análisis.</li>
+        <li><strong>Amazon Rekognition:</strong> Análisis de imágenes mediante aprendizaje automático para identificar defectos.</li>
+        <li><strong>AWS Lambda:</strong> Ejecución de código en respuesta a eventos, como la carga de imágenes.</li>
+        <li><strong>AWS Step Functions:</strong> Orquestación de los diferentes pasos del proceso.</li>
+        <li><strong>Amazon SNS:</strong> Notificaciones en tiempo real sobre el estado del análisis de defectos.</li>
+    </ul>
+
+    <h2>Descripción de la Arquitectura Punto por Punto</h2>
+    <ol>
+        <li><strong>Captura de Imagen:</strong> Las imágenes de productos son capturadas y enviadas a un bucket de Amazon S3.</li>
+        <li><strong>Activación Lambda:</strong> Cada vez que una imagen es cargada en S3, esto activa una función de AWS Lambda que inicia el proceso de análisis.</li>
+        <li><strong>Análisis con Rekognition:</strong> Lambda envía la imagen a Amazon Rekognition para el análisis, donde se identifican posibles defectos en el producto.</li>
+        <li><strong>Resultados de Análisis:</strong> Los resultados devueltos por Rekognition son procesados por AWS Lambda para determinar si el producto tiene defectos.</li>
+        <li><strong>Notificación:</strong> Si se encuentran defectos, se envía una notificación a través de Amazon SNS a los responsables para que tomen medidas.</li>
+        <li><strong>Almacenamiento de Datos:</strong> Se almacenan tanto las imágenes originales como los resultados del análisis en S3 para futuras referencias y auditorías.</li>
+    </ol>
+
+    <h2>Diagrama de Arquitectura</h2>
+    <img src="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/identify-product-defects-using-industrial-computer-vision-ra.pdf" alt="Diagrama de Arquitectura de Identificación de Defectos de Producto" style="width:100%; height:auto;"/>
+
+    <h2>Conclusión</h2>
+    <p>La arquitectura presentada permite una identificación eficaz de defectos en productos mediante el uso de visión por computadora y servicios de AWS. Estos servicios no solo garantizan un flujo de trabajo automatizado, sino que también aseguran una rápida notificación a las partes interesadas. Para más detalles sobre arquitecturas en AWS, recuerda visitar <a href="https://awsdesdecero.com">awsdesdecero.com</a>.</p>
+</body>
+```
