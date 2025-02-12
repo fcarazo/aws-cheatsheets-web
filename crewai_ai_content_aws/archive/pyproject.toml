@@ -1,0 +1,22 @@
+[project]
+name = "crewai_ai_content_aws"
+version = "0.1.0"
+description = "crewai-ai-content-aws using crewAI"
+authors = [{ name = "Fernando Carazo", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = ["crewai-tools>=0.33.0", "crewai[tools]>=0.100.1,<1.0.0"]
+
+[project.scripts]
+crewai_ai_content_aws = "crewai_ai_content_aws.main:run"
+run_crew = "crewai_ai_content_aws.main:run"
+train = "crewai_ai_content_aws.main:train"
+replay = "crewai_ai_content_aws.main:replay"
+test = "crewai_ai_content_aws.main:test"
+runforeach = "crewai_ai_content_aws.main:runforeach"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

@@ -1,0 +1,34 @@
+
+read_url_task:
+  description: >
+    Lee la URL proporcionada {url} y utiliza tu conocimiento de aws para extender la información relevante 
+    sobre la arquitectura de AWS descrita en la página, incluida la URL del diagrama y el enlace al diagrama original.
+  expected_output: >
+    Un resumen claro con los siguientes detalles:
+      - Introducción al caso práctico.
+      - Explicación de los servicios clave de AWS utilizados.
+      - Descripción de la arquitectura punto por punto.
+      - Conclusión con los puntos clave.
+      - Enlace al diagrama original.
+      - URL de la imagen del diagrama.
+  agent: aws_researcher
+
+download_diagram_task:
+  description: >
+    Descarga la imagen en local en formato pdf. Si es necesario, convierte el tipo a png.
+  expected_output: >
+    Archivo con el diagrama guardado en local.
+  agent: aws_researcher
+  
+write_article_task:
+  description: >
+    Redacta un artículo para Medium en español en formato HTML basado en la información extraída de la URL {url} proporcionada.
+    El artículo debe incluir:
+      - Introducción al caso práctico a resolver, mencionando nuestra web awsdesdecero.com.
+      - Explicación de los servicios clave de AWS utilizados.
+      - Imagen embebida del diagrama original y enlace {url} al diagrama original.
+      - Descripción de la arquitectura punto por punto.
+      - Conclusión con los puntos clave, destacando la utilidad de la arquitectura en AWS y mencionando nuevamente awsdesdecero.com.
+  expected_output: >
+    Un artículo en formato HTML (solo el body tag) que cubra todos los puntos clave de la arquitectura, incluyendo las menciones a awsdesdecero.com, la imagen embebida del diagrama y el enlace al diagrama original.
+  agent: aws_writer

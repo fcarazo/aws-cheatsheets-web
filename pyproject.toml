@@ -6,11 +6,15 @@ authors = ["Fernando Carazo <fernando.carazom@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<3.13"
 flask = "^3.0.3"
 gunicorn = "^22.0.0"
 frozen-flask = "^1.0.2"
 
+
+[tool.poetry.group.dev.dependencies]
+crewai = "^0.100.1"
+openai = "^1.61.1"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arquitectura de AWS para detectar defectos en productos utilizando visión artificial industrial</title>
+    <style>
+        body {font-family: Arial, sans-serif;}
+    </style>
+</head>
+<body>
+
+<p>En nuestra web awsdesdecero.com nos encontramos con la necesidad de mejorar la eficiencia y calidad de nuestros productos. Para lograr esto, hemos implementado una arquitectura de AWS que utiliza visión artificial industrial para detectar defectos en nuestros productos.</p>
+
+<h2>Introducción</h2>
+<p>La inspección manual es un proceso lento y costoso que puede llevar hasta 10 años para encontrar todos los defectos. El uso de la visión artificial industrial puede acelerar este proceso y reducir los costes.</p>
+
+<h2>Servicios clave de AWS utilizados</h2>
+<p>Para implementar esta arquitectura, hemos utilizado varios servicios de AWS:</p>
+<ul>
+    <li>Tosca: Es un servicio que permite crear modelos de aprendizaje automático utilizando los datos del producto y la inspección manual.</li>
+    <li>Computer Vision: Es un conjunto de APIs diseñadas para ayudar a desarrolladores a analizar imágenes y videos y realizar tareas como el reconocimiento de objetos, la detección de defectos, etc.</li>
+    <li>Lambda: Es un servicio que permite ejecutar funciones escalables y serverless en respuesta a eventos específicos. En este caso, se utiliza para procesar las imágenes de los productos y enviarlas al modelo de aprendizaje automático.</li>
+    <li>Amazon S3: Se utiliza para almacenar las imágenes de los productos y las respuestas del modelo de aprendizaje automático.</li>
+</ul>
+
+<h2>Arquitectura punto por punto</h2>
+<p>A continuación, se muestra la arquitectura de AWS utilizada:</p>
+
+<img src="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/identify-product-defects-using-industrial-computer-vision-ra.pdf" alt="Diagrama original" width="100%" />
+
+<a href="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/identify-product-defects-using-industrial-computer-vision-ra.pdf">Ver diagrama original</a>
+
+<p>La arquitectura consta de los siguientes componentes:</p>
+<ul>
+    <li>Un servidor Lambda que procesa las imágenes de los productos y envíalas al modelo de aprendizaje automático.</li>
+    <li>Un modelo de aprendizaje automático creado con Tosca, que analiza las imágenes y detecta defectos.</li>
+    <li>La inspección manual, que proporciona datos de calidad para el modelo de aprendizaje automático.</li>
+    <li>Amazon S3, que almacena las imágenes de los productos y las respuestas del modelo de aprendizaje automático.</li>
+</ul>
+
+<h2-Conclusión>
+<p>En conclusión, la arquitectura de AWS utilizada en nuestra web awsdesdecero.com permite detectar defectos en nuestros productos utilizando visión artificial industrial. La combinación de servicios clave de AWS como Tosca, Computer Vision, Lambda y Amazon S3 ha permitido automatizar el proceso de inspección manual y reducir los costes. Nuestra experiencia con esta arquitectura nos ha demostrado la eficiencia y calidad de nuestros productos.</p>
+
+</body>
+</html>

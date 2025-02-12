@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Identificando Defectos de Productos Usando AWS y Visión por Computadora</title>
+</head>
+<body>
+    <h1>Identificando Defectos de Productos Usando AWS y Visión por Computadora</h1>
+
+    <h2>Introducción</h2>
+    <p>
+        El uso de la visión por computadora en la industria se ha hecho indispensable para la identificación y corrección de defectos en productos durante el proceso de fabricación. Este artículo analiza una arquitectura de Amazon Web Services (AWS) diseñada específicamente para detectar anomalías en imágenes de productos, como defectos en fundiciones de metales y irregularidades en imágenes de rayos X, utilizando el servicio Amazon Lookout for Vision. Para más información sobre AWS, visita <a href="https://awsdesdecero.com">awsdesdecero.com</a>.
+    </p>
+
+    <h2>Servicios Clave de AWS Utilizados</h2>
+    <p>
+        Para implementar la solución de detección de defectos, se utilizan varios servicios clave de AWS:
+    </p>
+    <ol>
+        <li><strong>Amazon S3</strong>: Almacenamiento de imágenes de productos y conjuntos de datos para entrenamiento y prueba.</li>
+        <li><strong>Amazon Lookout for Vision</strong>: Servicio que permite la formación y despliegue de modelos de detección de defectos.</li>
+        <li><strong>AWS Lambda</strong>: Ejecución de código en respuesta a eventos, facilitando la inferencia en tiempo de ejecución.</li>
+        <li><strong>AWS Step Functions</strong>: Orquestación de flujos de trabajo para gestionar procesos complejos.</li>
+        <li><strong>AWS Batch y AWS Fargate</strong>: Provisión de recursos computacionales y ejecución de trabajos en modo de lote para la detección de anomalías.</li>
+    </ol>
+
+    <h2>Descripción de la Arquitectura Paso a Paso</h2>
+    <ol>
+        <li><strong>Captura de Imágenes</strong>: Las imágenes de los productos son capturadas bajo condiciones consistentes utilizando cámaras, máquinas de rayos X y otros dispositivos en el piso de producción.</li>
+        <li><strong>Transferencia de Imágenes</strong>: Se transfieren imágenes únicas a AWS utilizando AWS Transfer Family, AWS DataSync o AWS IoT Greengrass.</li>
+        <li><strong>Almacenamiento</strong>: Las imágenes son almacenadas en Amazon S3, separadas en conjuntos de datos de entrenamiento y prueba.</li>
+        <li><strong>Entrenamiento del Modelo</strong>: Amazon Lookout for Vision se utiliza para etiquetar automáticamente, entrenar, ajustar y desplegar el modelo de detección de defectos.</li>
+        <li><strong>Inferencia de Anomalías</strong>: AWS Lambda inicia la función del modelo de inferencia que detectará las anomalías en el producto.</li>
+        <li><strong>Manejo de Resultados</strong>: Si el nivel de confianza no se cumple, los usuarios son notificados a través de Amazon SNS.</li>
+        <li><strong>Visualización de Resultados</strong>: Los resultados se almacenan en Amazon S3 para visualización mediante Amazon QuickSight.</li>
+    </ol>
+
+    <h2>Diagrama de Arquitectura</h2>
+    <p>
+        A continuación se presenta el diagrama que ilustra la arquitectura mencionada:
+    </p>
+    <img src="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/identify-product-defects-using-industrial-computer-vision-ra.pdf" alt="Diagrama de Arquitectura" style="width:100%; height:auto;">
+    <p>
+        Puedes encontrar el diagrama de arquitectura original en el siguiente enlace: 
+        <a href="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/identify-product-defects-using-industrial-computer-vision-ra.pdf">Diagrama de Arquitectura de Detección de Defectos de Producto</a>.
+    </p>
+
+    <h2>Conclusión</h2>
+    <p>
+        La arquitectura presentada muestra cómo AWS y la visión por computadora pueden transformar el proceso de manufactura al permitir una identificación rápida y precisa de defectos en los productos. Esta solución no solo mejora la calidad del producto, sino que también optimiza los procesos de fabricación al reducir el tiempo y los costos asociados con el control de calidad manual. Para aprender más sobre AWS, visita nuevamente <a href="https://awsdesdecero.com">awsdesdecero.com</a>.
+    </p>
+</body>
+</html>
+```

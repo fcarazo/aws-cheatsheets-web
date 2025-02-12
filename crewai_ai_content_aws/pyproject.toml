@@ -1,0 +1,22 @@
+[project]
+name = "flow_aws_arquitecture"
+version = "0.1.0"
+description = "flow_aws_arquitecture using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.100.1,<1.0.0",
+    "pandas>=2.2.3",
+    "pdf2image>=1.17.0",
+]
+
+[project.scripts]
+kickoff = "flow_aws_arquitecture.main:kickoff"
+plot = "flow_aws_arquitecture.main:plot"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "flow"
