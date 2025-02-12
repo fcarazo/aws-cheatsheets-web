@@ -47,6 +47,9 @@ class AWSFlow(Flow[AWSState]):
                 "url": "https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/identify-product-defects-using-industrial-computer-vision-ra.pdf",
             },
         ]
+        index_ = self.state.file_count - 1
+        file_name = urls[index_]["file_name"] + ".html"
+        print(file_name)
         return urls
 
     @listen(generate_urls)
@@ -62,19 +65,31 @@ class AWSFlow(Flow[AWSState]):
         aws_content_crew = AWSCrew().crew()
         results = aws_content_crew.kickoff_for_each(urls)
         self.state.html = results
-        self.state.file_count += 1
 
         return (results, urls)
 
     @listen(and_(generate_content, generate_urls))
     def save_content(self, results):
         results, urls = results
-        index_ = self.state.file_count - 1
-        file_name = urls[index_]["file_name"] + ".html"
-        file_name = os.path.join("../templates/pubs/", file_name)
-        print(f"Saving content to {file_name}")
-        with open(file_name, "w") as f:
-            f.write(results)
+
+        # Itera sobre los resultados y las URLs
+        for index_, result in enumerate(results):
+            file_name = urls[index_]["file_name"] + ".html"
+            file_name = os.path.join("../templates/pubs/", file_name)
+            print(f"Saving content to {file_name}")
+
+            # Asegúrate de que cada resultado sea una cadena
+            if isinstance(result, list):
+                result = "".join(result)
+            elif not isinstance(result, str):
+                result = str(result)
+
+            # Guardar cada archivo HTML
+            with open(file_name, "w") as f:
+                f.write(result)
+
+        # Incrementar el contador de archivos después de guardar todos
+        self.state.file_count += len(results)
 
 
 def kickoff():

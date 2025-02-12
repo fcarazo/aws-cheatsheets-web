@@ -31,4 +31,5 @@ write_article_task:
       - Conclusión con los puntos clave, destacando la utilidad de la arquitectura en AWS y mencionando nuevamente awsdesdecero.com.
   expected_output: >
     Un artículo en formato HTML (solo el body tag) que cubra todos los puntos clave de la arquitectura, incluyendo las menciones a awsdesdecero.com, la imagen embebida del diagrama y el enlace al diagrama original.
+    El texto debe empezar y terminar con el body tag. Nada más.
   agent: aws_writer

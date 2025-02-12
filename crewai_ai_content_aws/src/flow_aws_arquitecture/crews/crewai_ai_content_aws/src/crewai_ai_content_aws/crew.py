@@ -3,6 +3,7 @@ from os import read
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import PDFSearchTool, ScrapeWebsiteTool
+from langchain_community.document_loaders import PyPDFLoader
 
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
